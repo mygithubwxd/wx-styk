@@ -1,0 +1,8 @@
+<!--pages/movie/movie-more/movie-more.wxml-->
+
+<!-- 引入movie-grid-template模板 -->
+<import src="movie-grid-template/movie-grid-template.wxml" />
+
+
+<!-- 使用引入的模板并通过data传参 -->
+<template is="movieGridTemplate" data="{{moviesData}}"/>

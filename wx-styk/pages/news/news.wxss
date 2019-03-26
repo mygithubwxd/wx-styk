@@ -1,0 +1,26 @@
+/* 使用@import语句可以导入外联样式表，@import后跟需要导入的外联样式表的相对路径，用;表示语句结束。 */
+/* 引入的是.wxss文件  这里导入的是模板的样式 */
+@import "news-template/news-template.wxss";
+
+
+/*轮播图样式*/
+.news-container{
+  background-color: #f1f1f1;
+}
+.news-container swiper{
+  width: 100%;
+  height: 350rpx;
+}
+
+/* <swiper-item>仅可放置在<swiper>组件中，宽高自动设置为100%。 */
+.news-container swiper-item image{
+  width:100%;
+}
+
+.content-scroll{
+  height: 100%; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  white-space: nowrap;
+}

@@ -1,0 +1,42 @@
+
+{
+  "pages": [
+    "pages/index/index",
+    "pages/news/news",
+    "pages/news/news-details/news-details",
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more",
+    "pages/movie/movie-detail/movie-detail"
+  ],
+
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "新闻",
+        "iconPath": "pages/img/xw-2.jpg",
+        "selectedIconPath": "pages/img/tt.jpg"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "pages/img/yj-1.jpg",
+        "selectedIconPath": "pages/img/yj-2.png"
+      }
+    ],
+    "selectedColor": "#109D59",
+    "borderStyle": "white",
+    "position":"bottom",
+    "backgroundColor":"#eee"
+  }
+}

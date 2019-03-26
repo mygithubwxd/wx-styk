@@ -1,0 +1,74 @@
+<!--news.wxml-->
+
+<!-- <import />标签引入模板（组件） .wxml文件 -->
+<import src="news-template/news-template.wxml"/>
+
+<!-- 数据绑定的形式{{}}获取数据 -->
+<scroll-view class='content-scroll' scroll-y="true">
+
+
+
+
+<view class='news-container'>
+
+  <!--轮播图swiper组件  数据绑定{{}}-->
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" autoplay='{{autoplay}}' interval="{{interval}}" circular="{{circular}}">
+  <!-- 其中只可放置<swiper-item/>组件，否则会导致未定义的行为。 -->
+    <swiper-item>
+      <image src='../img/banner1.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='../img/banner2.jpg'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='../img/banner3.jpg'></image>
+    </swiper-item>
+  </swiper>
+ 
+
+ <!-- 将 wx:for 用在<block/>标签上，以渲染一个包含多节点的结构块。 
+ vue中使用的是指令v-for = "(item index) in useData"-->
+ <!-- 注意： wx:for只能用于数组 -->
+
+ <block wx:for="{{useData}}" wx:for-item="item" wx:key="key">
+
+   <!-- 在组件上使用 wx:for 控制属性绑定一个数组（注意：只能用于数组），即可使用数组中各项的数据重复渲染该组件/模版。 
+默认数组的当前项的下标变量名默认为index，数组当前项的变量名默认为 item
+    //useData是数组，item是对象数组中的对象
+    1.使用 wx:for-item 可以指定数组当前元素的变量名，
+    2.使用 wx:for-index 可以指定数组当前下标的变量名，
+    如果没有提供，默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为item
+    3.使用 wx:key 来指定列表中项目的唯一的标识符(否则控制台会报出警告)，当数据改变触发渲染层重新渲染的时候，会校正带有 key 的组件，框架会确保他们被重新排序，而不是重新创建，以确保使组件保持自身的状态，并且提高列表渲染时的效率。-->
+   
+<!-- 什么是事件
+事件是视图层到逻辑层的通讯方式。
+事件可以将用户的行为反馈到逻辑层进行处理。
+事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。
+事件对象可以携带额外信息，如 id, dataset, touches。 -->
+
+<!-- bindtap:绑定点击事件：当用户点击该组件的时候会在该页面的逻辑层中找到相应的事件处理函数。 data-参数名 = '参数值'，事件对象event可以获取到该参数-->
+
+    <view bindtap='goNewsDetail' data-newsid="{{item.newsid}}">
+
+      <!-- <template />使用引入的模板 -->
+      <!-- <template />不能绑定事件 但是view标签可以绑定事件-->
+
+  <!-- bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。 -->
+
+      <!-- WXML提供模板（template），可以在模板中定义代码片段，然后在不同的地方调用。
+定义模板：<template name="newsTemplate"></template>该标签使用 name 属性，作为模板的名字。然后在<template/>标签内定义代码片段
+使用模板：使用 is 属性，声明需要的使用的模板，然后将模板所需要的数据通过data属性传入，is 属性可以使用 Mustache 语法{{}}，来动态决定具体需要渲染哪个模板。
+
+模板的作用域：模板拥有自己的作用域，只能使用 data 传入的数据以及模板定义文件中定义的 <wxs /> 模块。
+-->
+<!-- template模块与component组件，是小程序中组件化的方式。二者的区别是，template模块主要是展示，方法需要在使用template的页面中定义。而component组件，则拥有自己的js文件，整个component组件类似一个page页面。简单来说，只是展示用，建议使用template，组件中涉及到较多的逻辑，建议使用component。 -->
+
+      <template is="newsTemplate" data="{{...item}}"/> 
+       <!-- 通过data属性传入的数据， ...扩展运算符，展开item对象，方便数据的使用 -->
+    </view>
+
+  </block>  
+  
+</view>
+
+</scroll-view>

@@ -1,0 +1,14 @@
+<!--index.wxml-->
+
+
+<!-- 每一个.wxml文件中，有且只有一个根标签<view></view> -->
+
+<view class="index-container">
+  <image class="logo" src='../img/logo.jpg'></image>
+  <text class='username'>hello!</text>
+  <!-- 绑定点击事件，跳转页面 -->
+  <!-- bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。 -->
+  <view class="btn" bindtap='goNews'>  
+    <text>开启美好时光</text>
+  </view>
+</view>

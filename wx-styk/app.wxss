@@ -1,0 +1,25 @@
+/**app.wxss**/
+
+/* 初始化或者公共样式 */
+
+page{
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+/* scroll-view 不显示滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+

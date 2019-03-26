@@ -1,0 +1,33 @@
+
+<template name="starTemplate">
+  <view class='stars-container'>
+    <view class='stars'>
+
+    <!-- 在模板中使用列表渲染wx:for处理星星 -->
+    <!-- 数组stars:[1,1,0,0,0] -->
+    <!-- 在组件上使用 wx:for 控制属性绑定一个数组(注意：必须是数组)，即可使用数组中各项的数据重复渲染该组件 -->
+
+    <!-- wx:for列表渲染（组件） -->
+    <!-- 在组件上使用 wx:for 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。 -->
+    <!-- 类似 block wx:if，也可以将 wx:for 用在<block/>标签上，以渲染一个包含多节点的结构块。 -->
+
+    <!-- wx:for也可以重复渲染模版  -->
+    <!-- 模板的作用域：模板拥有自己的作用域，只能使用 data 传入的数据以及模板定义文件中定义的 <wxs /> 模块。 -->
+      <block wx:for="{{stars}}" wx:for-item="item" wx:key="key">
+        <image src='{{item ? "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551783548095&di=ff1e7b7e06b56e36abf5c4f778c076f0&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F06%2F04%2F03040c09ee9c29837853afcb75cb44f5.jpg" : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551783599545&di=059d7ae10998cea913b928e21ec8ff4f&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F01%2F35%2F49%2F35573be6e2c6bcb.jpg"}}'></image>
+      </block>
+    </view>
+    <text class='star-score'>{{average}}</text>
+  </view>
+</template>
+
+
+<!-- 切换图片的方式（图片二选一） -->
+<!-- 方法一 -->
+<!-- wx:if wx:else -->
+<!-- <image wx:if="{{collected}}" catchtap="collectData" src="../../img/s-1.jpg"></image>
+<image wx:else catchtap="collectData" src="../../img/s-2.jpg"></image> -->
+
+<!-- 方法二 -->
+<!-- 三元运算符的方式切换图片（图片二选一）-->
+<!-- <image class='music' catchtap='playerMusic'  src='{{isPlayer == false ? "../../img/y-1.jpg" : "../../img/y-2.jpg"}}'></image> -->

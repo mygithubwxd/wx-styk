@@ -1,0 +1,74 @@
+<!--pages/movie/movie-detail/movie-detail.wxml-->
+<!-- 引入星星模板 -->
+<import src="../star-template/star-template.wxml" />
+<scroll-view class='content-scroll' scroll-y="true"> 
+  <view class='container'>
+    <image class='head-img' src='{{moviesData.movieImg}}'></image>
+    <view class="head-img-hover" data-src="{{moviesData.movieImg}}">
+    <text class='main-title'>{{moviesData.title}}</text>
+    <text class='sub-title'>{{moviesData.country + "." + moviesData.year}}    </text>
+    <view class='like'>
+      <text class='highlight-font'>
+        {{moviesData.wishCount}}
+      </text>
+      <text class='plain-font'>
+        人喜欢
+      </text>
+      <text class='highlight-font'>
+        {{moviesData.commentCount}}
+      </text>
+      <text class='plain-font'>
+        条评论
+      </text>
+    </view>
+  </view>
+  
+    <image class='movie-img' src='{{moviesData.movieImg}}'
+      data-src='{{moviesData.movieImg}}' catchtap='viewMoviePostImg'>
+    </image>
+    <view class='summary'>
+      <view class='original-title'>
+        <text>{{moviesData.originalTitle}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='mark'>评分</text>
+        <template is="starTemplate" data="{{stars:moviesData.stars,average:moviesData.score}}" />
+      </view>
+      <view class='flex-row'>
+        <text class='mark'>导演</text>
+        <text>{{moviesData.director.name}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='mark'>影人</text>
+        <text>{{moviesData.casts}}</text>
+      </view>
+      <view class='flex-row'>
+        <text class='mark'>类型</text>
+        <text>{{moviesData.genres}}</text>
+      </view>
+    </view>
+    <view class='hr'></view>
+    <view class='synopsis'>
+      <text class='synopsis-font'>剧情简介</text>
+      <text class='summary-content'>{{moviesData.summary}}</text>
+    </view>
+    
+    <view class='cast'>
+      <text class='cast-font'>演员</text>
+      <!-- 可滚动区域 -->
+      <scroll-view class="content-scroll" scroll-x="true">
+          <block wx:for="{{moviesData.castInfo}}" wx:for-item="item" wx:key="key">
+            <view style="display: inline-block">
+              <view class="cast-container">
+                <image class="cast-img" src="{{item.img}}"></image>
+                <text class="cast-name">{{item.name}}</text>
+              </view>
+            </view>
+          </block>
+      </scroll-view>
+
+    </view>
+  </view>
+
+</scroll-view>
+

@@ -1,0 +1,69 @@
+/*文章样式*/
+/*用rpx单位 在不同分辨率的设备上呈现出的大小不一样*/ 
+.articlelist{
+  /* flex默认水平布局，改为垂直布局 */
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+  background-color: #fff;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.articlelist .author-msg{
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+.articlelist .author-msg .author-icon{
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+.articlelist .author-msg .author-name{
+  margin-left: 20rpx;
+}
+.articlelist .author-msg .author-date{
+  margin-left: 20rpx;
+  vertical-align: middle;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.articlelist .title{
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+.articlelist .article-img{
+  margin-left: 16px;
+  width:100%;
+  height: 340rpx;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.articlelist .article-text{
+  color: #666;
+  font-size: 26rpx;
+  margin-bottom: 20rpx;
+  letter-spacing: 2rpx;
+  line-height: 40rpx;
+  white-space: pre-wrap;
+}
+.articlelist .article-like{
+  font-size: 13px;
+  flex-direction: row;
+  line-height: 16px;
+}
+.articlelist .article-like .article-like-icon{
+  height: 16px;
+  width:16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.articlelist .article-like .article-like-text{
+  vertical-align: middle;
+  margin-right: 20px;
+}

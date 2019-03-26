@@ -1,0 +1,21 @@
+<!-- 定义模板：使用 name 属性，作为模板的名字。然后在<template/>内定义代码片段 -->
+<!-- <template></template>标签包裹 -->
+<template name="newsTemplate">
+  <!-- 获取父组件在使用该模板时通过data属性传过来的数据 -->
+  <view class='articlelist'>
+    <view class='author-msg'>
+      <image class="author-icon" src="{{authorIcon}}"></image>
+      <text class='author-name'>{{authorName}}</text>
+      <text class='author-date'>{{authorDate}}</text>
+    </view>
+    <text class='title'>{{title}}</text>
+    <image class="article-img" src="{{articleImg}}"></image>
+    <text class='article-text'>{{articleText}}</text>
+    <view class='article-like'>
+      <image class="article-like-icon" src="{{articleLikeIcon[0]}}"></image>
+      <text class='article-like-text'>{{articleLikeText[0]}}</text>
+      <image class="article-like-icon" src="{{articleLikeIcon[1]}}"></image>
+      <text class='article-like-text'>{{articleLikeText[1]}}</text>
+    </view>
+  </view>
+</template>

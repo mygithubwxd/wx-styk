@@ -1,0 +1,13 @@
+<!-- 引入movie-template模板 -->
+<import src="../../movie-template/movie-template.wxml" />
+
+<template name="movieGridTemplate">
+  <view class='grid-container'>
+  <!-- moviesData是一个对象数组 -->
+    <block wx:for="{{moviesData}}" wx:for-item="item" wx:key="key">
+      <view class='single-view-container'> 
+        <template is="movieTemplate" data="{{...item}}" />
+      </view>
+    </block>
+  </view>
+</template>

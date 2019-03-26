@@ -1,0 +1,32 @@
+<!-- 引入movie-template模板 -->
+<import src="../movie-template/movie-template.wxml" />
+
+<template name="movieListTemplate">
+  <view class='movie-list-container'>
+    <view class='inner-container'>
+      <view class='movie-head'>
+      <!-- 正在热映 即将上映 排行榜 -->
+        <text class='slogan'>{{classifyNmae}}</text>
+
+        <!-- 事件传参 -->
+        <!-- js文件中 点击事件函数可以通过以下方法获取通过data-设置的值：event.currentTarget.dataset.classifyName -->
+        <view class='more' catchtap='movieMore' data-classifyName="{{classifyNmae}}">
+          <text class='more-text'>更多</text>
+          <image class='more-img' src='../img/>>.png'></image>
+        </view>
+      </view>
+      <view class='movies-container'>
+      <!-- 加载三个movieTemplate -->
+        <!-- <template is="movieTemplate" />
+        <template is="movieTemplate" />
+        <template is="movieTemplate" /> -->
+
+        <!-- moviesData是一个对象数组 -->
+        <block wx:for="{{moviesData}}" wx:for-item="item" wx:key="key">
+        <!-- 使用引入的模板并传参 -->
+          <template is="movieTemplate" data="{{...item}}"/>
+        </block>
+      </view>
+    </view>
+  </view>
+</template>

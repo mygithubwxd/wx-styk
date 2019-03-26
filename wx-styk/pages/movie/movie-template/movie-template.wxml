@@ -1,0 +1,15 @@
+<!--引入star-template模板  -->
+<import src="../star-template/star-template.wxml" />
+
+<!-- movieTemplate模板 -->
+<template name="movieTemplate">
+  <!-- data-传递动态数据 -->
+  <view class='movie-container' catchtap='goMovieDetail' data-movieid='{{movieid}}'>
+    <image class='movie-img' src="{{coverageUrl}}"></image>
+    <text class='movie-title'>{{title}}</text>
+    <!-- 使用引入的星星模板，并传入参数 -->
+    <template is="starTemplate" data="{{stars,average}}"/>
+  </view>
+</template>
+
+<!-- 这里data传来两个特定的数据，要写成键值对的形式 -->
